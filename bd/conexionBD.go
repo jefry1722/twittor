@@ -31,8 +31,6 @@ func conectarBD() *mongo.Client{
 /*ChequeoConexion es el ping a la BD*/
 func ChequeoConexion() bool{
 	err:=MongoCN.Ping(context.TODO(),nil)
-	if err!=nil{
-		return false
-	}
-	return true
+
+	return err==nil
 }
